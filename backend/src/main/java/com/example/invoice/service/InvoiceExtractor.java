@@ -23,4 +23,6 @@ public interface InvoiceExtractor {
             "Do not return markdown, just the fields.")
     @UserMessage("Extract information from this invoice:\n{{it}}")
     Invoice extract(String text);
+
+    Invoice extract(dev.langchain4j.data.message.UserMessage userMessage);
 }
