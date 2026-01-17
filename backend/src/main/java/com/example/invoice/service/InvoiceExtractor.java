@@ -11,9 +11,9 @@ public interface InvoiceExtractor {
     @SystemMessage("You are an expert invoice parser. Extract the following information from the invoice text. " +
             "If a field is missing, leave it null. Return the result as a JSON object matching the Invoice structure. " +
             "Fields to extract: " +
-            "- totalAmount (finalnu cenu) " +
-            "- amountWithoutVat (cenu bez dph) " +
-            "- vatAmount (dph) " +
+            "- totalAmount (cen) " +
+            "- amountWithoutVat (cena bez dph) " +
+            "- vatAmount (suma dph) " +
             "- supplierName (nazov dodavatela) " +
             "- issueDate (datum vystavenia - format YYYY-MM-DD) " +
             "- dueDate (datum splatnosti - format YYYY-MM-DD) " +

@@ -28,7 +28,7 @@ const UploadComponent = ({ onResults }) => {
                 // Assuming backend runs on 8080 and we have a proxy or direct call
                 // In Vite dev, we might need CORS or proxy setup.
                 // Assuming simple CORS on backend.
-                const response = await axios.post('http://localhost:8080/api/invoices/extract', formData, {
+                const response = await axios.post('http://localhost:8081/api/invoices/extract', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
