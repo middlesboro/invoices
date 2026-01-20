@@ -1,21 +1,23 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
-import UploadComponent from './components/UploadComponent'
-import ResultsTable from './components/ResultsTable'
+import InvoicePage from './components/InvoicePage'
+import ChatPage from './components/ChatPage'
 
 function App() {
-  const [results, setResults] = useState([]);
-
-  const handleResults = (newResults) => {
-    setResults(prev => [...prev, ...newResults]);
-  };
-
   return (
-    <div className="container">
-      <h1>Invoice Extractor</h1>
-      <UploadComponent onResults={handleResults} />
-      <ResultsTable results={results} />
-    </div>
+    <Router>
+      <div className="container">
+        <nav style={{ marginBottom: '20px', padding: '10px', borderBottom: '1px solid #ccc' }}>
+          <Link to="/" style={{ marginRight: '20px' }}>Invoice Extractor</Link>
+          <Link to="/chat">Order Chatbot</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<InvoicePage />} />
+          <Route path="/chat" element={<ChatPage />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
